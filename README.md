@@ -1,4 +1,4 @@
 korocr
 ======
 
-OCR for Korean
+OCR for Korean (under development)
