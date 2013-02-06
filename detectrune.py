@@ -1,0 +1,2 @@
+def Register(detectFunc):
+	pass
