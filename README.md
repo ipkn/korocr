@@ -1,0 +1,4 @@
+korocr
+======
+
+OCR for Korean
