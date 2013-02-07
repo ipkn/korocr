@@ -1,13 +1,37 @@
 import numpy as np
-def TryGroup4(aim, ps, f):
-	l = ps[0][0]
-	for idx, p in enumerate(ps):
-		if idx >= 4:
-			break
-		r = p[1]
-		if r-l > len(aim)*1.5:
-			break
-		f(aim, l, r)
+def DetermineStrokePower(aim):
+	vpool = []
+	for line in aim:
+		current = -1
+		for v in line:
+			if v > 50:
+				if current == -1:
+					current = v
+				else:
+					current += v
+			elif current >= 0:
+				vpool.append(current)
+				current = -1
+		if current >= 0:
+			vpool.append(current)
+	hpool = []
+	for i in xrange(len(aim)):
+		line = aim[:,i]
+		current = -1
+		for v in line:
+			if v > 50:
+				if current == -1:
+					current = v
+				else:
+					current += v
+			elif current >= 0:
+				hpool.append(current)
+				current = -1
+		if current >= 0:
+			hpool.append(current)
+	print vpool, hpool
+	return vpool, hpool
+	
 
 def ConvertToBlackBased(im):
 	a = np.asarray(im).astype('uint32')

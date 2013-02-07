@@ -13,7 +13,7 @@ class OCRTextLineTest(unittest.TestCase):
 		im.save('croped.jpg')
 		aim = util.ConvertToBlackBased(im)
 		breakPoints = CharBreak(aim)
-		tp = 6
+		tp = 14
 		print DetectRuneKor(aim[:,breakPoints[tp][0]:breakPoints[tp][1]])
 
 
